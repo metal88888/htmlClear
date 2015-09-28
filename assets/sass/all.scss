@@ -1,0 +1,98 @@
+@charset 'utf-8';
+@import "libs/_resetHtml5";
+@import "libs/_clearfix";
+@import "libs/common";
+
+
+body {
+  font: 14px/1.4286  'Simhei', Helmet ,Arial, SimSun, Helvetica, sans-serif;
+}
+
+
+// $pagers-spacing: 5px;
+// $pagers-sprite-dimensions: true;
+// @import "common/pagers/*.png";
+// @include all-pagers-sprites;
+
+
+html,
+body{
+  width: 640px;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+#orientationWrap{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background: #000;
+  img{
+    $w: 1060px;
+    $h: 1306px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -($w/2);
+    margin-top: -($h/2);
+  }
+}
+
+#loading{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#pagerWrap{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  [data-weixin="1"] &{
+    top: -120px;
+  }
+  .pagelist{
+    position: relative;
+    display: none;
+    animation: pageIn 0.5s;
+    &.current{
+      display: block;
+      background: #000;
+    }
+  }
+}
+
+@keyframes pageIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+input{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 9;
+}
+
+.listwrap{
+  position: relative;
+  width: 1280px;
+  height: 840px;
+}
+
